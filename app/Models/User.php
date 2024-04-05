@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use Illuminate\Support\Facades\DB;
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -43,5 +45,11 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function get_all_type_of_users($id){
+
+        return DB::select('SELECT id  , name FROM users WHERE type_id = ? ;',[$id]);
+
     }
 }
