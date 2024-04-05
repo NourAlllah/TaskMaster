@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('statistics', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->unsignedBigInteger('type_id');
+            $table->unsignedBigInteger('user_id');
+            $table->integer('number_of_tasks');
             $table->timestamps();
 
-            //$table->foreign('type_id')->references('id')->on('types'); 
+            //$table->foreign('user_id')->references('id')->on('users'); 
 
         });
-
     }
 
     /**
@@ -28,8 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('statistics');
     }
 };
