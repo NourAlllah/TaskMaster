@@ -3,10 +3,10 @@
 
 html,
 body {
-  background-color: var(--mid-blue);
-  text-align: center;
-  font-family: "Raleway", Helvetica, sans-serif;
-  min-width: 320px;
+  background-color: var(--mid-blue) !important;
+  text-align: center !important;
+  font-family: "Raleway", Helvetica, sans-serif !important;
+  min-width: 320px !important;
 }
 
 header {
@@ -18,6 +18,8 @@ header {
 #title{
     color: var(--white);
     font-family: system-ui;
+    font-weight: 800;
+    margin: 3rem;
 }
 
 #form-outer {
@@ -53,12 +55,12 @@ label {
 }
 
 .input-field {
-  height: 20px;
-  width: 280px;
-  padding: 5px;
-  margin: 10px;
-  border: 1px solid var(--dark-grey);
-  border-radius: 2px;
+    height: 35px;
+    width: 280px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid var(--dark-grey);
+    border-radius: 2px;
 }
 
 input:focus-visible ,
@@ -96,6 +98,12 @@ select:focus-visible
   margin-top: 15px;
   border: 1px solid var(--dark-grey);
   border-radius: 2px;
+}
+
+ul{
+    margin: 0px;
+    list-style-type: none;
+    padding: 0px;
 }
 
 
