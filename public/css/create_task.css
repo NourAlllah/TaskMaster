@@ -1,25 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
-@import "pallete.css";
-
-html,
-body {
-  background-color: var(--mid-blue) !important;
-  text-align: center !important;
-  font-family: "Raleway", Helvetica, sans-serif !important;
-  min-width: 320px !important;
-}
+@import 'layout.css';
 
 header {
   font-size: 2em;
   font-weight: bold;
   margin: 20px;
-}
-
-#title{
-    color: var(--white);
-    font-family: system-ui;
-    font-weight: 800;
-    margin: 3rem;
 }
 
 #form-outer {

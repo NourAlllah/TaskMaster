@@ -1,0 +1,57 @@
+@import 'layout.css';
+
+table {
+    width: 90%;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+.table-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+td,
+th {
+    border: 1px solid var(--dark-grey);
+    padding: 10px 20px;
+}
+
+th {
+    background-color: var(--light-grey);
+}
+
+table th:first-child{
+    border-radius:10px 0 0 0px !important;
+}
+  
+table th:last-child{
+    border-radius:0 10px 0px 0 !important;
+}
+th{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-blue-shade);
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) td {
+    background-color: var(--light-grey);
+}
+
+tr:nth-child(odd) td {
+    background-color: var(--light-grey);
+}
+
+caption {
+    padding: 10px;
+}
+

@@ -1,0 +1,28 @@
+@import "pallete.css";
+
+html,
+body {
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-align: left;
+    background-color: var(--mid-blue) !important;
+    text-align: center !important;
+    font-family: "Raleway", Helvetica, sans-serif !important;
+    min-width: 320px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+#title{
+    color: var(--white);
+    font-family: system-ui;
+    font-weight: 800;
+    margin: 3rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
