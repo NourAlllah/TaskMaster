@@ -1,25 +1,34 @@
 @import 'pallete.css';
+
 .pagination {
-    margin: 18px;
+    display: flex;
     justify-content: center;
+    padding: 2rem;
+    font-weight: 600;
 }
 
 .pagination a {
-    display: flex;
-    padding: 2px 10px;
-    padding-bottom: 1px;
     color: var(--dark-blue-shade);
-    margin: 2px;
-    font-size: 14px;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    height: 40px;
 }
 
 .pagination a.active {
     background-color: var(--mid-blue);
     color: var(--white);
     border-radius: 4px;
+    height: 40px;
 }
 
 .pagination a:hover:not(.active) {
     background-color: var(--grey);
     border-radius: 4px;
+}
+
+.pages_details{
+    margin-top: 14px;
+    color: #333d4c;
+    font-size: 12px;
 }

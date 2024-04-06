@@ -55,12 +55,20 @@ class TaskController extends Controller
         $this->taskModel->create_task_db($request->admin , $request->task_title , $request->task_description , $request->not_admin);
 
         UpdateStatistics::dispatch($request->not_admin);
-        //ProcessBackgroundJob::dispatch('nouro and moro');
-        return Redirect::to(route('tasks_page'));
+        return Redirect::to(route('tasks_page').'?page=1');
 
     }
 
     public function tasks_list_page(){
-        return view('tasks_list_page');
+
+        try {
+            $page = $_GET['page'];
+        } catch (\Throwable $th) {
+            $page = "1";
+        }
+
+        $all_tasks = $this->taskModel->get_all_tasks($page);
+        
+        return view('tasks_list_page')->with(['tasks'=> $all_tasks[0] , 'NumberOfTasks'=>$all_tasks[1]]);
     }
 }

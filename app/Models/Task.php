@@ -23,4 +23,21 @@ class Task extends Model
             'created_at' => $date
         ]);
     }
+
+    public function get_all_tasks($page ){
+
+        $tasks_per_page = 10;
+        $offset = ($page - 1) * $tasks_per_page;
+
+        $tasks = DB::select('SELECT data.title , data.description  , data.assigned_by_id  , data.assigned_to_id , 
+            data.user_name , users.name as admin_name
+            from (SELECT tasks.title , tasks.description , tasks.assigned_by_id , tasks.assigned_to_id ,  users.name as user_name  
+            FROM convertedin.tasks inner join convertedin.users on users.id = tasks.assigned_to_id ) as data 
+            inner join convertedin.users on users.id = data.assigned_by_id   LIMIT ?, ?', [$offset, $tasks_per_page]);
+        $number_of_tasks = DB::select('SELECT COUNT(task_id) AS NumberOfTasks FROM tasks;');
+
+        return [$tasks, $number_of_tasks];
+    }
+    
+   
 }

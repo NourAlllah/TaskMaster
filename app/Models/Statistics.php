@@ -16,26 +16,4 @@ class Statistics extends Model
 
     }
 
-   /*  public function create_user_statistics_record($assigned_to_id){
-
-        date_default_timezone_set('Africa/Cairo');
-        $date = date('Y-m-d H:i:s', time());
-
-        DB::table('statistics')->insert([
-            'user_id' => $assigned_to_id,
-            'number_of_tasks' => 1,
-            'created_at' => $date
-        ]);
-
-
-    } */
-
-   /*  public function update_user_statistics($assigned_to_id){
-
-        date_default_timezone_set('Africa/Cairo');
-        $date = date('Y-m-d H:i:s', time());
-
-        DB::update("UPDATE statistics SET number_of_tasks = number_of_tasks + 1 and updated_at = ? WHERE user_id = ?", [$date, $assigned_to_id]);
-
-    } */
 }
