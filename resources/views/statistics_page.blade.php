@@ -11,33 +11,22 @@
 
     <div id="leaderboard">
       <table>
-        <tr>
-          <td class="number">1</td>
-          <td class="name">Lee Taeyong</td>
-          <td class="points">
-            258.244 
-          </td>
-        </tr>
-        <tr>
-          <td class="number">2</td>
-          <td class="name">Mark Lee</td>
-          <td class="points">258.242</td>
-        </tr>
-        <tr>
-          <td class="number">3</td>
-          <td class="name">Xiao Dejun</td>
-          <td class="points">258.223</td>
-        </tr>
-        <tr>
-          <td class="number">4</td>
-          <td class="name">Qian Kun</td>
-          <td class="points">258.212</td>
-        </tr>
-        <tr>
-          <td class="number">5</td>
-          <td class="name">Johnny Suh</td>
-          <td class="points">258.208</td>
-        </tr>
+
+        @foreach ($ranks as $index => $rank)
+            <tr>
+                <td class="number">{{(int)$index + 1}}</td>
+                <td class="name">{{$rank->name}}</td>
+                <td class="points">{{$rank->number_of_tasks}} 
+                    @if ($rank->number_of_tasks == 1 || $rank->number_of_tasks > 10 )
+                        - task
+                    @else
+                        - tasks
+                    @endif
+                     
+                </td>
+            </tr>
+        @endforeach
+        
       </table>
      
     </div>

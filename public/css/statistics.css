@@ -13,7 +13,6 @@ main {
     flex-direction: column;
     align-items: center;
     border-radius: 0.5rem;
-    margin: 5rem;
 }
 
 
@@ -41,6 +40,7 @@ h1 {
     table-layout: fixed;
     color: #141a39;
     cursor: default;
+    margin-bottom: 5rem;
   }
   
   tr {

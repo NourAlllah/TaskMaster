@@ -16,4 +16,12 @@ class Statistics extends Model
 
     }
 
+    public function  get_all_statistics_records(){
+
+        return DB::select('SELECT statistics.id , statistics.number_of_tasks , users.name
+        FROM convertedin.statistics inner join convertedin.users  on statistics.user_id = users.id
+        order by number_of_tasks desc limit 10;');
+
+    }
+
 }
