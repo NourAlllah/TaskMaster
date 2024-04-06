@@ -4,22 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Log;
+use Exception;
+
+use App\Jobs\UpdateStatistics;
+use App\Jobs\ProcessBackgroundJob;
+
 
 class TaskController extends Controller
 {
     protected $typeModel;
     protected $userModel;
     protected $taskModel;
-    protected $statisticskModel;
-
-
 
     public function __construct()
     {
         $this->typeModel = new \App\Models\Type();
         $this->userModel = new \App\Models\User();
         $this->taskModel = new \App\Models\Task();
-        $this->statisticskModel = new \App\Models\Statistics();
     }
 
     public function index(){
@@ -51,9 +54,13 @@ class TaskController extends Controller
 
         $this->taskModel->create_task_db($request->admin , $request->task_title , $request->task_description , $request->not_admin);
 
-        //$check_statistics_exist = $this->statisticskModel->check_user_statistics_record_exist($request->not_admin);
-        return $request;
+        UpdateStatistics::dispatch($request->not_admin);
+        //ProcessBackgroundJob::dispatch('nouro and moro');
+        return Redirect::to(route('tasks_page'));
 
+    }
 
+    public function tasks_list_page(){
+        return view('tasks_list_page');
     }
 }
