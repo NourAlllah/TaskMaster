@@ -10,8 +10,8 @@ body {
     text-align: center !important;
     font-family: "Raleway", Helvetica, sans-serif !important;
     min-width: 320px !important;
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 #title{
@@ -25,4 +25,20 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.top_users_span{
+    text-align: left;
+}
+
+.top_users{
+    text-align: left;
+    color: var(--dark-blue);
+    font-weight: 700;   
+     margin-left: 100px;
+
+}
+
+.left{
+    margin-left: 21rem;
 }

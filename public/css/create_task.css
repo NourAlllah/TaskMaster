@@ -10,7 +10,7 @@ header {
 #form-outer {
     display: flex;
     background-color: var(--light-grey);
-    margin: 0 auto;
+    margin: 20px auto;    
     border-radius: 4px;
     width: 75%;
     max-width: 900px;

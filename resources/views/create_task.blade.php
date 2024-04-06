@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layout.layout')
+
+@section('header')
     <title>Create Task</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/create_task.css') }}">
+@endsection
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
-    
-</body>
+@section('content')
     <h1 id="title">Create Task</h1>
+    <span class="top_users_span"><a href="{{route('statistics')}}" class="top_users left" target="blank">Top 10</a></span>
+
     <div id="form-outer">
         <form id="create_task_form" method="POST" action="{{ route('create_task') }}">
             @csrf
@@ -39,7 +34,7 @@
                     <input autofocus type="text" name="task_title" id="task_title" class="input-field" placeholder="Enter task title" required>
                 </div>
             </div>
-           
+        
             <div class="rowTab">
                 <div class="labels">
                     <label for="task_description">Task Description</label>
@@ -75,5 +70,5 @@
         </form>
         
     </div>
-</html>
-
+@endsection
+   
