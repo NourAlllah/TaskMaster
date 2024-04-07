@@ -76,20 +76,22 @@ Seeds:
         php artisan migrate
 
 
-php artisan config:clear
+7- clearinf config cash:
 
-php artisan config:cache 
+        php artisan config:clear
+
+        php artisan config:cache 
 
 
-7- Seed the database:
+8- Seed the database:
 
         php artisan db:seed
 
-8- Start the development server:
+9- Start the development server:
 
         php artisan serve
 
-9- Ensure that queue workers are running to handle jobs:
+10- Ensure that queue workers are running to handle jobs:
 
         php artisan queue:work
 
