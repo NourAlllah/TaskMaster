@@ -75,6 +75,12 @@ Seeds:
 
         php artisan migrate
 
+
+php artisan config:clear
+
+php artisan config:cache 
+
+
 7- Seed the database:
 
         php artisan db:seed
