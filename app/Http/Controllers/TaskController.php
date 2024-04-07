@@ -59,12 +59,14 @@ class TaskController extends Controller
             return redirect()->back()
                 ->withErrors($validator)
                 ->withInput();
+        }else{
+            $this->taskModel->create_task_db($request->admin , $request->task_title , $request->task_description , $request->not_admin);
+
+            UpdateStatistics::dispatch($request->not_admin);
+            return Redirect::to(route('tasks_page').'?page=1');
         }
 
-        $this->taskModel->create_task_db($request->admin , $request->task_title , $request->task_description , $request->not_admin);
-
-        UpdateStatistics::dispatch($request->not_admin);
-        return Redirect::to(route('tasks_page').'?page=1');
+        
 
     }
 
