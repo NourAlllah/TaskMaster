@@ -48,7 +48,7 @@ Seeds:
 
 1- Clone the repository:
 
-        git clone https://github.com/NourAlllah/Convertedin--Task
+        git clone https://github.com/NourAlllah/TaskMaster.git
 
 2- Install dependencies:
 
